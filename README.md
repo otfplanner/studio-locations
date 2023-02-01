@@ -21,5 +21,10 @@ document.querySelectorAll('.studios-cl-wrapper [role="listitem"] .w-embed').forE
   });
 });
 
-JSON.stringify(output);
+
+function dedupeArray(array) {
+  return Array.from(new Set(array.map(JSON.stringify))).map(JSON.parse);
+}
+
+JSON.stringify(dedupeArray(output));
 ```
